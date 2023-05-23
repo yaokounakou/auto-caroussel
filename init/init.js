@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const folderPath = path.join(__dirname, "public", "medias");
+const folderPath = path.join(__dirname, "../public", "medias");
 console.log(folderPath);
 
 function getFileType(filename) {
@@ -33,7 +33,7 @@ fs.readdir(folderPath, (err, files) => {
   });
 
   const jsonContent = JSON.stringify(fileNames, null, 2);
-  const destinationPath = path.join(__dirname, "public/data", "files.json");
+  const destinationPath = path.join(__dirname, "../public/data", "files.json");
 
   fs.writeFile(destinationPath, jsonContent, (err) => {
     if (err) {
